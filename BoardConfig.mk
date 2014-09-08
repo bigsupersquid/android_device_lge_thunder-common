@@ -1,7 +1,7 @@
 -include vendor/lge/thunder-common/BoardConfigVendor.mk
 -include device/lge/msm7x27-common/BoardConfigCommon.mk
 
-TARGET_KERNEL_SOURCE 				:= kernel/lge/msm7x27-3.0.x-p500
+TARGET_KERNEL_SOURCE 				:= kernel/lge/msm7x27-3.0.x
 
 MINIGZIP 							:= $(shell which lzma)
 ARM_EABI_TOOLCHAIN 					:= $(ANDROID_BUILD_TOP)/prebuilt/linux-x86/toolchain/arm-unknown-eabi-4.7/bin

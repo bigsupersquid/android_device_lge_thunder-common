@@ -10,7 +10,9 @@ TARGET_GCC_VERSION_AND 				:= 4.7-sm
 
 ## Boot loader & recovery
 SKIP_SET_METADATA 					:= true
-TARGET_RECOVERY_FSTAB 				:= device/lge/thunder-common/recovery/recovery.fstab
+ifneq (eng,$(TARGET_BUILD_VARIANT))
+TARGET_RECOVERY_FSTAB 				:= device/lge/thunder-common/recovery/recovery_f2fs.fstab
+endif
 
 DEVICE_RESOLUTION 					:= 320x480
 RECOVERY_GRAPHICS_USE_LINELENGTH 	:= true

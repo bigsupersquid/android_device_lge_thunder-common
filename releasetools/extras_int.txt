@@ -1,4 +1,13 @@
-# Extra apps
+# Too much space taken up by apps
+app/Apollo.apk
+app/BasicDreams.apk
+app/Bluetooth.apk
+app/BluetoothExt.apk
+app/Browser.apk
+app/Calculator.apk
+app/Calendar.apk
+app/CMFileManager.apk
+app/DSPManager.apk
 app/Exchange2.apk
 app/Email.apk
 app/Email2.apk
@@ -9,7 +18,6 @@ app/LatinIME.apk
 lib/libjni_latinime.so
 app/Term.apk
 lib/libjackpal-androidterm4.so
-app/LiveWallpapers.apk
 
 # CM Wallpapers (7MB)
 app/CMWallpapers.apk
@@ -17,10 +25,17 @@ app/CMWallpapers.apk
 # Live Wallpapers (3MB)
 app/Galaxy4.apk
 app/HoloSpiralWallpaper.apk
+app/LiveWallpapers.apk
+app/LiveWallpapersPicker.apk
 app/MagicSmokeWallpapers.apk
 app/NoiseField.apk
 app/PhaseBeam.apk
+app/PhotoTable.apk
+app/PrintSpooler.apk
+app/SoundRecorder.apk
+app/SpeechRecorder.apk
 app/VisualizationWallpapers.apk
+app/VoicePlus.apk
 
 # Some extra apps (3MB)
 app/Apollo.apk

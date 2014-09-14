@@ -3,7 +3,6 @@
 
 TARGET_KERNEL_SOURCE 				:= kernel/lge/msm7x27-3.0.x
 
-MINIGZIP 							:= $(shell which lzma)
 ARM_EABI_TOOLCHAIN 					:= $(ANDROID_BUILD_TOP)/prebuilt/linux-x86/toolchain/arm-unknown-eabi-4.7/bin
 #ARM_EABI_TOOLCHAIN 				:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9/bin 
 TARGET_GCC_VERSION_AND 				:= 4.7-sm
@@ -11,7 +10,9 @@ TARGET_GCC_VERSION_AND 				:= 4.7-sm
 ## Boot loader & recovery
 SKIP_SET_METADATA 					:= true
 ifneq (eng,$(TARGET_BUILD_VARIANT))
-TARGET_RECOVERY_FSTAB 				:= device/lge/thunder-common/recovery/recovery_f2fs.fstab
+TARGET_RECOVERY_FSTAB 				:= device/lge/thunder-common/recovery/recovery.fstab
+else
+MINIGZIP 							:= $(shell which lzma)
 endif
 
 DEVICE_RESOLUTION 					:= 320x480

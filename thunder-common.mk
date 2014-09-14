@@ -1,28 +1,29 @@
 CM_BUILDTYPE := EXPERIMENTAL
-CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
+CM_EXTRAVERSION := internal_bigsuperROM
+#CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
 #CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode
-ifneq (eng,$(TARGET_BUILD_VARIANT))
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/checkbootreason:root/sbin/checkbootreason
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_01.rle:root/chargerimages/battery_ani_01.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_02.rle:root/chargerimages/battery_ani_02.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_03.rle:root/chargerimages/battery_ani_03.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_04.rle:root/chargerimages/battery_ani_04.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_05.rle:root/chargerimages/battery_ani_05.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_bg.rle:root/chargerimages/battery_bg.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_01.rle:root/chargerimages/battery_charging_01.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_02.rle:root/chargerimages/battery_charging_02.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_03.rle:root/chargerimages/battery_charging_03.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_04.rle:root/chargerimages/battery_charging_04.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_05.rle:root/chargerimages/battery_charging_05.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_06.rle:root/chargerimages/battery_charging_06.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_wait_ani_01.rle:root/chargerimages/battery_wait_ani_01.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/battery_wait_ani_02.rle:root/chargerimages/battery_wait_ani_02.rle \
-    $(LOCAL_PATH)/chargemode/chargerimages/black_bg.rle:root/chargerimages/black_bg.rle \
-    $(LOCAL_PATH)/chargemode/chargerlogo:root/sbin/chargerlogo
-endif
+#ifneq (eng,$(TARGET_BUILD_VARIANT))
+#PRODUCT_COPY_FILES += $(LOCAL_PATH)/checkbootreason:root/sbin/checkbootreason
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_01.rle:root/chargerimages/battery_ani_01.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_02.rle:root/chargerimages/battery_ani_02.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_03.rle:root/chargerimages/battery_ani_03.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_04.rle:root/chargerimages/battery_ani_04.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_ani_05.rle:root/chargerimages/battery_ani_05.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_bg.rle:root/chargerimages/battery_bg.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_01.rle:root/chargerimages/battery_charging_01.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_02.rle:root/chargerimages/battery_charging_02.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_03.rle:root/chargerimages/battery_charging_03.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_04.rle:root/chargerimages/battery_charging_04.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_05.rle:root/chargerimages/battery_charging_05.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_charging_06.rle:root/chargerimages/battery_charging_06.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_wait_ani_01.rle:root/chargerimages/battery_wait_ani_01.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/battery_wait_ani_02.rle:root/chargerimages/battery_wait_ani_02.rle \
+#    $(LOCAL_PATH)/chargemode/chargerimages/black_bg.rle:root/chargerimages/black_bg.rle \
+#    $(LOCAL_PATH)/chargemode/chargerlogo:root/sbin/chargerlogo
+#endif
 
 # thunder-common configs
 PRODUCT_COPY_FILES += \
@@ -81,6 +82,14 @@ libjni_pckeyboard
 PRODUCT_PACKAGES += \
 Email \
 Launcher3
+# dual-mode recovery
+PRODUCT_COPY_FILES += \
+    device/lge/thunder-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/recovery.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
 
 
 # Inherit products (Most specific first)
@@ -90,10 +99,12 @@ $(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk
 
 # dual-mode recovery
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/recovery.fstab \
-    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
-    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp.fstab \
-    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
+    device/lge/thunder-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/recovery.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
 
 # Overrides
 PRODUCT_NAME := thunder-common

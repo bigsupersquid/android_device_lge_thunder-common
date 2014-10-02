@@ -1,6 +1,6 @@
 CM_BUILDTYPE := EXPERIMENTAL
-CM_EXTRAVERSION := internal_bigsuperROM
-#CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
+#CM_EXTRAVERSION := internal_bigsuperROM
+CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
 #CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode
@@ -130,17 +130,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.purgeable_assets=1 \
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.jit.codecachesize=0 \
 	dalvik.vm.checkjni=false \
 	dalvik.vm.dexopt-data-only=0 \
 	dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y \
     dalvik.vm.heapstartsize=5m \
-    dalvik.vm.heapgrowthlimit=36m \
-    dalvik.vm.heapsize=64m \
-    dalvik.vm.heaptargetutilization=0.25 \
+    dalvik.vm.heapgrowthlimit=64m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heaptargetutilization=0.80 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=2m \
     dalvik.vm.dexopt-data-only=0 \
     dalvik.vm.verify-bytecode=false \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
-    dalvik.vm.jmiopts=forcecopy \
-    dalvik.vm.execution-mode=int:jit
+    dalvik.vm.jniopts=forcecopy \
+    dalvik.vm.execution-mode=int:fast

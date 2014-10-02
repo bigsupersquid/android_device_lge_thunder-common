@@ -43,7 +43,7 @@ TARGET_CAMERA_SENSOR_MP_SIZE 		:= 3
 
 #COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT -DZTE_CAMERA_HARDWARE
 #COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNEEDS_VECTORIMPL_SYMBOLS
-
+COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX
 ## OTA script extras file and trash file (build/tools/releasetools)
 TARGET_OTA_EXTRAS_FILE 				:= device/lge/thunder-common/releasetools/extras.txt
 TARGET_OTA_TRASH_FILE 				:= device/lge/thunder-common/releasetools/trash.txt

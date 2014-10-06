@@ -1,6 +1,6 @@
 CM_BUILDTYPE := EXPERIMENTAL
-#CM_EXTRAVERSION := internal_bigsuperROM
-CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
+CM_EXTRAVERSION := internal_bigsuperROM
+#CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
 #CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode

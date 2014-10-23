@@ -6,7 +6,6 @@ app/BluetoothExt.apk
 app/Browser.apk
 app/Calculator.apk
 app/Calendar.apk
-app/CMFileManager.apk
 app/DSPManager.apk
 app/Exchange2.apk
 app/Email.apk
@@ -18,6 +17,7 @@ app/LatinIME.apk
 lib/libjni_latinime.so
 app/Term.apk
 lib/libjackpal-androidterm4.so
+app/VoicePlus.apk
 
 # CM Wallpapers (7MB)
 app/CMWallpapers.apk
@@ -26,7 +26,6 @@ app/CMWallpapers.apk
 app/Galaxy4.apk
 app/HoloSpiralWallpaper.apk
 app/LiveWallpapers.apk
-app/LiveWallpapersPicker.apk
 app/MagicSmokeWallpapers.apk
 app/NoiseField.apk
 app/PhaseBeam.apk
@@ -35,7 +34,6 @@ app/PrintSpooler.apk
 app/SoundRecorder.apk
 app/SpeechRecorder.apk
 app/VisualizationWallpapers.apk
-app/VoicePlus.apk
 
 # Some extra apps (3MB)
 app/Apollo.apk
@@ -59,6 +57,9 @@ tts/lang_pico/it-IT_ta.bin
 # Fonts
 fonts/LBhashitaComplexSans-Regular.ttf
 fonts/LBhashitaComplexSans-Bold.ttf
+fonts/AndroidEmoji.ttf
+fonts/NotoColorEmoji.ttf
+
 
 # Ringtones (5.85MB)
 media/audio/ringtones/Acheron.ogg

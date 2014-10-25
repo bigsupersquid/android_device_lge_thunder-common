@@ -17,7 +17,6 @@ app/LatinIME.apk
 lib/libjni_latinime.so
 app/Term.apk
 lib/libjackpal-androidterm4.so
-app/VoicePlus.apk
 
 # CM Wallpapers (7MB)
 app/CMWallpapers.apk
@@ -34,6 +33,7 @@ app/PrintSpooler.apk
 app/SoundRecorder.apk
 app/SpeechRecorder.apk
 app/VisualizationWallpapers.apk
+app/VoicePlus.apk
 
 # Some extra apps (3MB)
 app/Apollo.apk

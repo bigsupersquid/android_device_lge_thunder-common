@@ -1,7 +1,7 @@
 CM_BUILDTYPE := EXPERIMENTAL
 #CM_EXTRAVERSION := internal_bigsuperROM
-CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
-#CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
+#CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
+CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode
 #ifneq (eng,$(TARGET_BUILD_VARIANT))
@@ -83,6 +83,16 @@ PRODUCT_PACKAGES += \
 Email \
 Launcher3
 
+
+# Inherit products (Most specific first)
+$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
+
+# Overrides
+PRODUCT_NAME := thunder-common
+PRODUCT_DEVICE := thunder-common
+PRODUCT_MODEL := LG-thunder-common
+PRODUCT_MANUFACTURER := LGE
+
 # Common assets 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := mdpi
@@ -90,17 +100,6 @@ $(call inherit-product, device/mdpi-common/mdpi.mk)
 
 #override init.qcom.rc for mounting fs in init.(device).rc
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc
-
-# Inherit products (Most specific first)
-$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
-$(call inherit-product, device/lge/msm7x27-common/device.mk)
-$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
-
-# Overrides
-PRODUCT_NAME := thunder-common
-PRODUCT_DEVICE := thunder-common
-PRODUCT_MODEL := LG-thunder-common
-PRODUCT_MANUFACTURER := LGE
 
 DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.force_hw_ui=true 

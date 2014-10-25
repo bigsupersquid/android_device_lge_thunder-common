@@ -10,7 +10,6 @@ TARGET_GCC_VERSION_AND 				:= 4.7-sm
 ## Boot loader & recovery
 SKIP_SET_METADATA 					:= true
 ifneq (eng,$(TARGET_BUILD_VARIANT))
-TARGET_RECOVERY_FSTAB 				:= device/lge/thunder-common/recovery/recovery.fstab
 else
 MINIGZIP 							:= $(shell which lzma)
 endif

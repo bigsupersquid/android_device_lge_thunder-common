@@ -86,6 +86,8 @@ Launcher3
 
 # Inherit products (Most specific first)
 $(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
+$(call inherit-product, device/lge/msm7x27-common/device.mk)
+$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
 
 # Overrides
 PRODUCT_NAME := thunder-common

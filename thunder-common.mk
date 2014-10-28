@@ -1,7 +1,7 @@
 CM_BUILDTYPE := EXPERIMENTAL
-CM_EXTRAVERSION := internal_bigsuperROM
+#CM_EXTRAVERSION := internal_bigsuperROM
 #CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
-#CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
+CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode
 #ifneq (eng,$(TARGET_BUILD_VARIANT))
@@ -83,39 +83,6 @@ PRODUCT_PACKAGES += \
 Email \
 Launcher3
 # dual-mode recovery
-PRODUCT_COPY_FILES += \
-    device/lge/thunder-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
-
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/recovery.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
-
-
-# Inherit products (Most specific first)
-$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
-$(call inherit-product, device/lge/msm7x27-common/device.mk)
-$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
-
-# dual-mode recovery
-PRODUCT_COPY_FILES += \
-    device/lge/thunder-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
-
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/recovery.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp.fstab \
-#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
-
-# Overrides
-PRODUCT_NAME := thunder-common
-PRODUCT_DEVICE := thunder-common
-PRODUCT_MODEL := LG-thunder-common
-PRODUCT_MANUFACTURER := LGE
-
-# Common assets 
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-$(call inherit-product, device/mdpi-common/mdpi.mk)
 
 #override init.qcom.rc for mounting fs in init.(device).rc
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc
@@ -145,3 +112,30 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     dalvik.vm.jniopts=forcecopy \
     dalvik.vm.execution-mode=int:fast
+
+
+# Inherit products (Most specific first)
+$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
+$(call inherit-product, device/lge/msm7x27-common/device.mk)
+$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
+
+# dual-mode recovery
+#PRODUCT_COPY_FILES += \
+#    device/lge/thunder-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/recovery.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_sd.fstab:recovery/root/etc/twrp_sd.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp.fstab \
+#    $(LOCAL_PATH)/recovery/twrp_int.fstab:recovery/root/etc/twrp_int.fstab
+
+# Overrides
+PRODUCT_NAME := thunder-common
+PRODUCT_DEVICE := thunder-common
+PRODUCT_MODEL := LG-thunder-common
+PRODUCT_MANUFACTURER := LGE
+
+# Common assets 
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+$(call inherit-product, device/mdpi-common/mdpi.mk)
+

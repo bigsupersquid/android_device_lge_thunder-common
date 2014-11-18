@@ -5,7 +5,7 @@ TARGET_KERNEL_SOURCE 				:= kernel/lge/msm7x27-3.0.x
 
 ARM_EABI_TOOLCHAIN 					:= $(ANDROID_BUILD_TOP)/prebuilt/linux-x86/toolchain/arm-unknown-eabi-4.7/bin
 #ARM_EABI_TOOLCHAIN 				:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9/bin 
-TARGET_GCC_VERSION_AND 				:= 4.7-sm
+#TARGET_GCC_VERSION_AND 				:= 4.7-sm
 
 ## Boot loader & recovery
 SKIP_SET_METADATA 					:= true
@@ -26,6 +26,7 @@ TARGET_NO_SEPARATE_RECOVERY 		:= true
 TARGET_NO_INITLOGO 					:= true
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH 	:= \"/sys/class/leds/lcd-backlight/brightness\"
 TARGET_USERIMAGES_USE_F2FS 			:= true
+TARGET_USERIMAGES_USE_EXT2 			:= true
 
 TW_BRIGHTNESS_PATH 					:= /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_SUPERSU 					:= true
@@ -40,9 +41,6 @@ TARGET_PREBUILT_LIBCAMERA :=
 TARGET_SPECIFIC_HEADER_PATH 		:= device/lge/thunder-common/include3x 
 TARGET_CAMERA_SENSOR_MP_SIZE 		:= 3
 
-#COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT -DZTE_CAMERA_HARDWARE
-#COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNEEDS_VECTORIMPL_SYMBOLS
-COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX
 ## OTA script extras file and trash file (build/tools/releasetools)
 TARGET_OTA_EXTRAS_FILE 				:= device/lge/thunder-common/releasetools/extras.txt
 TARGET_OTA_TRASH_FILE 				:= device/lge/thunder-common/releasetools/trash.txt

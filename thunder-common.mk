@@ -1,7 +1,7 @@
 CM_BUILDTYPE := EXPERIMENTAL
 #CM_EXTRAVERSION := internal_bigsuperROM
 #CM_EXTRAVERSION := f2fs_os2sd_bigsuperROM
-CM_EXTRAVERSION := ext4_os2sd_bigsuperROM
+CM_EXTRAVERSION := ext2_os2sd_bigsuperROM
 
 # Don't include charger detection in recovery mode
 #ifneq (eng,$(TARGET_BUILD_VARIANT))
@@ -80,7 +80,6 @@ libjni_pckeyboard
 
 # more stuff
 PRODUCT_PACKAGES += \
-Email \
 Launcher3
 
 # Common assets 
@@ -90,11 +89,6 @@ $(call inherit-product, device/mdpi-common/mdpi.mk)
 
 #override init.qcom.rc for mounting fs in init.(device).rc
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc
-
-# Inherit products (Most specific first)
-$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
-$(call inherit-product, device/lge/msm7x27-common/device.mk)
-$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)
 
 # Overrides
 PRODUCT_NAME := thunder-common
@@ -114,7 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.jit.codecachesize=0 \
 	dalvik.vm.checkjni=false \
-	dalvik.vm.dexopt-data-only=0 \
+	dalvik.vm.dexopt-data-only=1 \
 	dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y \
     dalvik.vm.heapstartsize=5m \
     dalvik.vm.heapgrowthlimit=64m \
@@ -127,3 +121,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.stack-trace-file=/data/anr/traces.txt \
     dalvik.vm.jniopts=forcecopy \
     dalvik.vm.execution-mode=int:fast
+
+# Inherit products (Most specific first)
+$(call inherit-product, vendor/lge/thunder-common/thunder-common-vendor.mk)
+$(call inherit-product, device/lge/msm7x27-common/device.mk)
+$(call inherit-product, vendor/lge/msm7x27-common/msm7x27-common-vendor-blobs.mk)

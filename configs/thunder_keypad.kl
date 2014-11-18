@@ -36,6 +36,7 @@ key 247   FOCUS
 key 217   SEARCH	    WAKE_DROPPED
 
 key 226   HEADSETHOOK       WAKE
+key 216   POWER             WAKE
 key 116   POWER             WAKE
 key 107   ENDCALL           WAKE_DROPPED
 

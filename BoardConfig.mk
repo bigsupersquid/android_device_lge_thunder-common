@@ -3,8 +3,8 @@
 
 TARGET_KERNEL_SOURCE 				:= kernel/lge/msm7x27-3.0.x
 
-ARM_EABI_TOOLCHAIN 					:= $(ANDROID_BUILD_TOP)/prebuilt/linux-x86/toolchain/arm-unknown-eabi-4.7/bin
-#ARM_EABI_TOOLCHAIN 				:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9/bin 
+#ARM_EABI_TOOLCHAIN 					:= $(ANDROID_BUILD_TOP)/prebuilt/linux-x86/toolchain/arm-unknown-eabi-4.7/bin
+ARM_EABI_TOOLCHAIN 				:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-unknown-eabi-4.7/bin 
 #TARGET_GCC_VERSION_AND 				:= 4.7-sm
 
 ## Boot loader & recovery
@@ -26,7 +26,7 @@ TARGET_NO_SEPARATE_RECOVERY 		:= true
 TARGET_NO_INITLOGO 					:= true
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH 	:= \"/sys/class/leds/lcd-backlight/brightness\"
 TARGET_USERIMAGES_USE_F2FS 			:= true
-TARGET_USERIMAGES_USE_EXT2 			:= true
+TARGET_USERIMAGES_USE_EXT4 			:= 
 
 TW_BRIGHTNESS_PATH 					:= /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_SUPERSU 					:= true

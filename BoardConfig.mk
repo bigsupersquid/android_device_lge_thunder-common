@@ -26,7 +26,7 @@ TARGET_NO_SEPARATE_RECOVERY 		:= true
 TARGET_NO_INITLOGO 					:= true
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH 	:= \"/sys/class/leds/lcd-backlight/brightness\"
 TARGET_USERIMAGES_USE_F2FS 			:= true
-TARGET_USERIMAGES_USE_EXT4 			:= true
+TARGET_USERIMAGES_USE_EXT4 			:=
 
 TW_BRIGHTNESS_PATH 					:= /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_SUPERSU 					:= true
